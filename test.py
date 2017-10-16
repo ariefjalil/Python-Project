@@ -15,6 +15,7 @@ for num in range(101):
 	total = total + num
 print total
 
+#Tradeshift
 
 print "MY name is"
 i = 0
