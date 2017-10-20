@@ -11,12 +11,12 @@ import random
 def main():
 
    # print "I can tell your future!"
-    
+
     replies = ["I don't think so","Definitely yes!","It's hard to say.",
                "Yes all the way!", "Hmmm...maybe?","Not really",
                "Ask something else"]
 
-    while True:               
+    while True:
         question = raw_input("Enter a yes/no question: ")
 
         #Random number that translates to response
@@ -28,9 +28,8 @@ def main():
         if again[0].lower() == "n":
             break
     print "Goodbye!"
-    
+
 
 
 if __name__ == "__main__":
     main()
-    
