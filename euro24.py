@@ -26,7 +26,9 @@ football_schedule = [
 
 ]
 
-# Function to get matches for a specific date and time
+# Function to get matches for a specific date and time in GMT +8
+
+
 def get_matches_for_date(date_str):
     matches = [match for match in football_schedule if match["date"] == date_str]
     return matches
