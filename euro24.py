@@ -26,7 +26,7 @@ football_schedule = [
 
 ]
 
-# Function to get matches for a specific date and time in GMT +8
+# Function to get matches for a specific date and time in GMT +8 Malaysia
 
 
 def get_matches_for_date(date_str):
