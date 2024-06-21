@@ -30,80 +30,89 @@
 
 #actual answer
 
+
 import random, sys
 
 print('ROCK, PAPER, SCISSORS')
-
 wins = 0
 losses = 0
 ties = 0
 
+while True: #main game loop
+	print('%s Wins, %s Losses, %s Ties' %(wins, losses, ties))
 
-
-
-while True: # The main game loop.
-	print('%s Wins, %s Losses, %s Ties' %(wins,losses, ties))
-
-
-	while True: #player input loop
-		print('Enter your move: (r)ock (p)aper (s)cissors (q)uit')
+	while True:
+		print('Enter your your move: (r)ock (p)aper (s)cissors (q)uit')
 		user_input = input('>')
 		if user_input == 'q':
-			sys.exit() # Quit the program.
+			sys.exit()
+		if user_input == 'r' or user_input=='p' or user_input=='s':
+			break
+		print('Type one of r, p, s, or q.')
+		
 
-		if user_input == 'r' or user_input =='p' or user_input =='s':
-			break # Break out of the player input loop if r p or s selected, else print below
-		print('Please type r, p, s OR q')
-
-
-	if user_input =='r':
-		print('ROCK versus ...')
-	elif user_input =='p':
-		print('PAPER versus ...')
+	if user_input == 'r':
+		print('Rock versus ...')
+	elif user_input == 'p':
+		print('Paper versus ...')
 	elif user_input == 's':
-		print('SCISSORS versus ...')
+		print('Scissors versus...')
 
-	#CPU selection
-	randomNum = random.randint(1,3)
-	if randomNum == 1:
-		cpuGuess = 'r'
+
+	#computer move
+	computer = random.randint(1,3)
+
+	if computer == 1:
+		comGuess = 'r'
 		print('ROCK!')
-	elif randomNum == 2:
-		cpuGuess ='p'
+
+	elif computer == 2:
+		comGuess = 'p'
 		print('PAPER!')
-	elif randomNum == 3:
-		cpuGuess = 's'
-		print('SCISSORS!')
+
+	elif computer == 3:
+		comGuess = 's'
+		print('Scissors!')
 
 
-	if user_input == cpuGuess:
-		print('It is a tie!')
-		ties = ties + 1
-
-	elif user_input == 'r' and cpuGuess =='s':
-		print('You win!')
-		wins = wins + 1
-
-	elif user_input == 'p' and cpuGuess =='r':
-		print('You win!')
-		wins = wins + 1
-
-	elif user_input == 's' and cpuGuess =='p':
-		print('You win!')
-		wins = wins + 1
-
-	elif user_input == 'r' and cpuGuess =='p':
-		print('You LOSE!')
-		losses = losses + 1
-	elif user_input == 'p' and cpuGuess =='s':
-		print('You LOSE!')
-		losses = losses + 1
-	elif user_input == 's' and cpuGuess =='r':
-		print('You LOSE!')
-		losses = losses + 1
+	if user_input == comGuess:
+		print(f'It\'s a TIE. You both chose {user_input}')
+		ties += 1
 
 
+		#simpliy the code
+
+	elif (user_input == 'r' and comGuess =='s') or (user_input == 'p' and comGuess == 'r') or \
+		(user_input == 's' and comGuess == 'p') :
+		print('YOU WIN!🥇')
+		wins += 1
+
+	else:
+
+		print('YOU LOSE!😭')
+		losses += 1
 
 
+	# elif user_input == 'r' and comGuess =='s':
+	# 	print('YOU WIN!🥇')
+	# 	wins += 1
 
+	# elif user_input == 'p' and comGuess =='r':
+	# 	print('YOU WIN!🥇')
+	# 	wins += 1
+
+	# elif user_input == 's' and comGuess =='p':
+	# 	print('YOU WIN!🥇')
+	# # 	wins += 1
+	# elif user_input == 'r' and comGuess =='p':
+	# 	print('YOU LOSE!😭')
+	# 	losses += 1
+
+	# elif user_input == 'p' and comGuess =='s':
+	# 	print('YOU LOSE!😭')
+	# 	losses += 1
+
+	# elif user_input == 's' and comGuess =='r':
+	# 	print('YOU LOSE!😭')
+	# 	losses += 1
 
